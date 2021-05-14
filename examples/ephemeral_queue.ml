@@ -54,7 +54,7 @@ let pop q =
   q.size <- q.size - 1;
   x
 (*@ x = pop q
-      raises  Not_found -> is_empty (old q)
+      raises  Not_found -> q.view = old q.view = []
       ensures x :: q.view = (old q).view *)
 
 let transfer q1 q2 =
